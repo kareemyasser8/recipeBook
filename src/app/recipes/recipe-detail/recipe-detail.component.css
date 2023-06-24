@@ -1,0 +1,22 @@
+.dropdown-menu{
+  top: 40px;
+  padding: 8px;
+}
+
+.dropdown-menu li{
+  padding: 5px;
+}
+
+.dropdown-menu li:not(:last-child){
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.dropdown-menu li a{
+  color: rgb(34, 34, 34);
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover{
+  background-color: rgb(238, 238, 238);
+  border-radius: 2px;
+}

@@ -13,12 +13,16 @@
     <div class="btn-group">
       <button
         type="button"
-        class="btn btn-primary dropdown-toggle">
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        (click)="clickManageRecipe()"
+        class="btn btn-primary dropdown-toggle" >
         Manage Recipe
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a href="">Add Ingredients to Shopping List</a></li>
+      <ul class="dropdown-menu" [ngClass]="{'show': showMenu}">
+        <li><a href="">Add Ingredients</a></li>
         <li><a href="">Edit Recipe</a></li>
         <li><a href="">Delete Recipe</a></li>
       </ul>
