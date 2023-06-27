@@ -3,3 +3,13 @@
   left: -100px;
   padding: 8px;
 }
+
+.active{
+  background-color: #7da7c59d;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+a{
+  cursor: pointer;
+}
