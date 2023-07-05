@@ -10,6 +10,21 @@ export class ShoppingListService {
   ];
 
   private ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
+
+  getIngredient(index: number){
+    return this.ingredients[index];
+  }
+
+  updateIngredient(index: number, ingredient: Ingredient){
+    this.ingredients[index] = ingredient;
+    this.ingredientsChanged.next([...this.ingredients]);
+  }
+
+  deleteIngredient(index: number){
+    this.ingredients.splice(index,1);
+    this.ingredientsChanged.next([...this.ingredients]);
+  }
 
   addIngredient(ingredient: Ingredient){
     this.ingredients.push(ingredient);
