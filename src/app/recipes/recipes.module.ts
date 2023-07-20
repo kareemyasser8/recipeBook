@@ -9,7 +9,7 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RecipesRoutingModule } from "./recipes-routing.module";
-import { ShoppingListRoutingModule } from "../shopping-list/shopping-list-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -22,10 +22,9 @@ import { ShoppingListRoutingModule } from "../shopping-list/shopping-list-routin
   ],
   imports:[
     RouterModule,
-    CommonModule,
     ReactiveFormsModule,
     RecipesRoutingModule,
-    ShoppingListRoutingModule
+    SharedModule
   ],
   exports: [
     RecipesComponent,
