@@ -1,4 +1,3 @@
-import { AuthActions, LoginStart } from './store/auth.actions';
 import {
   Component,
   ComponentFactoryResolver,
@@ -7,15 +6,14 @@ import {
   ViewChild,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 
-import { AuthResponseData, AuthService } from './auth.service';
-import { Router } from '@angular/router';
+import * as fromAuthActions from '../auth/store/auth.actions';
 import { AlertComponent } from '../shared/alert/alert.component';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
-import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
-import * as fromAuthActions from '../auth/store/auth.actions';
+import { AuthResponseData } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -32,8 +30,6 @@ export class AuthComponent implements OnInit, OnDestroy {
   alertHost: PlaceholderDirective;
 
   constructor(
-    private authService: AuthService,
-    private router: Router,
     private componentFactoryResolver: ComponentFactoryResolver,
     private store: Store<fromApp.AppState>
   ) {}
